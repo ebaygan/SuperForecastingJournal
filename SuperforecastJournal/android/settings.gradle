@@ -1,0 +1,3 @@
+rootProject.name = 'SuperforecastJournal'
+
+include ':app'
