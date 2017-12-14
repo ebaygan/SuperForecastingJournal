@@ -9,7 +9,10 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  ListView,
+  Button,
+  Console
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -20,18 +23,42 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<{}> {
+
+constructor() {
+  super();
+  const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows(['row 1', 'row 2']),
+    };
+
+}
+
+onCreateNew = () => {
+    console.log('this is:', this);
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Select your topic
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <Button
+            title="Create Topic"
+            onPress={this.onCreateNew}
+            color="#003300"
+            accessibilityLabel="Create new topic"
+        />
+        <Button
+            title="Delete Topic"
+            onPress={this.onCreateNew}
+            color="#400000"
+            accessibilityLabel="Create new topic"
+        />
+        <ListView
+        dataSource={this.state.dataSource}
+        renderRow={(rowData) => <Text>{rowData}</Text>}
+      />
       </View>
     );
   }
