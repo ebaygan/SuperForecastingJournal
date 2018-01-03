@@ -41,9 +41,10 @@ onCreateNew = () => {
         />
         <Button
             title="Delete Topic"
-            onPress={this.onCreateNew}
+            onPress={() =>
+          navigate('DeleteTopicScreen', { name: 'Jane' })
+        }
             color="#400000"
-            accessibilityLabel="Create new topic"
         />
         <ListView
         dataSource={this.state.dataSource}

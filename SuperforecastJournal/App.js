@@ -21,6 +21,7 @@ import {
 
 import { CreateTopicScreen } from './screens/CreateTopicScreen.js';
 import { HomeScreen } from './screens/HomeScreen.js';
+import { DeleteTopicScreen} from './screens/DeleteTopicScreen.js';
 
 export const App = StackNavigator({
   Home: { 
@@ -28,6 +29,9 @@ export const App = StackNavigator({
   },
   CreateTopicScreen: { 
     screen: CreateTopicScreen
+  },
+  DeleteTopicScreen: { 
+    screen: DeleteTopicScreen
   },
 });
 
