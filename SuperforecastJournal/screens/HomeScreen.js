@@ -27,7 +27,7 @@ onCreateNew = () => {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <View >
         <Text style={styles.welcome}>
           Select your topic
         </Text>
@@ -38,14 +38,18 @@ onCreateNew = () => {
         }
             color="#003300"
             accessibilityLabel="Create new topic"
+            style={styles.button}
         />
+        <View style={styles.button}>
         <Button
             title="Delete Topic"
+            
             onPress={() =>
           navigate('DeleteTopicScreen', { name: 'Jane' })
         }
             color="#400000"
         />
+        </View>
         <ListView
         dataSource={this.state.dataSource}
         renderRow={(rowData) => <Text>{rowData}</Text>}
@@ -56,6 +60,10 @@ onCreateNew = () => {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    height: 250,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
