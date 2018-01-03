@@ -15,6 +15,22 @@ import {
   Console
 } from 'react-native';
 
+import {
+  StackNavigator,
+} from 'react-navigation';
+
+import { CreateTopicScreen } from './screens/CreateTopicScreen.js';
+import { HomeScreen } from './screens/HomeScreen.js';
+
+export const App = StackNavigator({
+  Home: { 
+    screen: HomeScreen
+  },
+  CreateTopicScreen: { 
+    screen: CreateTopicScreen
+  },
+});
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -22,47 +38,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component<{}> {
 
-constructor() {
-  super();
-  const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: ds.cloneWithRows(['row 1', 'row 2']),
-    };
-
-}
-
-onCreateNew = () => {
-    console.log('this is:', this);
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Select your topic
-        </Text>
-        <Button
-            title="Create Topic"
-            onPress={this.onCreateNew}
-            color="#003300"
-            accessibilityLabel="Create new topic"
-        />
-        <Button
-            title="Delete Topic"
-            onPress={this.onCreateNew}
-            color="#400000"
-            accessibilityLabel="Create new topic"
-        />
-        <ListView
-        dataSource={this.state.dataSource}
-        renderRow={(rowData) => <Text>{rowData}</Text>}
-      />
-      </View>
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -82,3 +58,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+export default App;
