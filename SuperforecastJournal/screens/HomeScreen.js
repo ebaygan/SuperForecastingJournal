@@ -6,7 +6,8 @@ import {
   View,
   ListView,
   Button,
-  Console
+  Console,
+  Dimensions
 } from 'react-native';
 
 export class HomeScreen extends Component<{}> {
@@ -20,6 +21,10 @@ constructor() {
 
 }
 
+static navigationOptions = {
+    title: 'Select your topic',
+  }
+
 onCreateNew = () => {
     console.log('this is:', this);
   }
@@ -28,26 +33,24 @@ onCreateNew = () => {
     const { navigate } = this.props.navigation;
     return (
       <View >
-        <Text style={styles.welcome}>
-          Select your topic
-        </Text>
+        <View style={styles.toolbar}>
         <Button
+        style={styles.toolbarButton}
             title="Create Topic"
             onPress={() =>
           navigate('CreateTopicScreen', { name: 'Jane' })
         }
-            color="#003300"
+            
             accessibilityLabel="Create new topic"
-            style={styles.button}
         />
-        <View style={styles.button}>
+        
         <Button
             title="Delete Topic"
-            
+            style={styles.toolbarButton}
             onPress={() =>
           navigate('DeleteTopicScreen', { name: 'Jane' })
         }
-            color="#400000"
+            
         />
         </View>
         <ListView
@@ -60,10 +63,23 @@ onCreateNew = () => {
 }
 
 const styles = StyleSheet.create({
-  button: {
-    alignItems: 'center',
-    height: 250,
-  },
+  toolbar:{
+        backgroundColor:'#003300',
+        paddingTop:10,
+        paddingBottom:10,
+        flexDirection:'row'    //Step 1
+    },
+    toolbarButton:{
+        width: 50,            //Step 2
+        backgroundColor:'#003300',
+        textAlign:'center'
+    },
+    toolbarTitle:{
+        color:'#fff',
+        textAlign:'center',
+        fontWeight:'bold',
+        flex:1                //Step 3
+    },
   container: {
     flex: 1,
     justifyContent: 'center',
