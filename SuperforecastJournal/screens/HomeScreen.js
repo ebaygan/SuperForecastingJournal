@@ -42,7 +42,7 @@ onCreateNew = () => {
         <Button
         style={styles.toolbarButton}
             title="Create Topic"
-             color="#003300"
+             color="#FFFFFF"
             onPress={() =>
           navigate('CreateTopicScreen', { name: 'Jane' })
         }
@@ -55,7 +55,7 @@ onCreateNew = () => {
         <Button
             title="Delete Topic"
             style={styles.toolbarButton}
-            color="#003300"
+            color="#FFFFFF"
             onPress={() =>
           navigate('DeleteTopicScreen', { name: 'Jane' })
         }
