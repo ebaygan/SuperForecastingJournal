@@ -21,7 +21,8 @@ import {
 
 import { CreateTopicScreen } from './screens/CreateTopicScreen.js';
 import { HomeScreen } from './screens/HomeScreen.js';
-import { DeleteTopicScreen} from './screens/DeleteTopicScreen.js';
+import { DeleteTopicScreen } from './screens/DeleteTopicScreen.js';
+import { TopicRealmManager } from './persistent_storage/RealmTopicManager.js'
 
 export const App = StackNavigator({
   Home: { 
