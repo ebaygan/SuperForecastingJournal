@@ -23,6 +23,7 @@ import { CreateTopicScreen } from './screens/CreateTopicScreen.js';
 import { HomeScreen } from './screens/HomeScreen.js';
 import { DeleteTopicScreen } from './screens/DeleteTopicScreen.js';
 import { TopicRealmManager } from './persistent_storage/RealmTopicManager.js'
+import styles from './Styles/Styles.js'
 
 export const App = StackNavigator({
   Home: { 
@@ -43,25 +44,5 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 export default App;
