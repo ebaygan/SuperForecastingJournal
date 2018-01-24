@@ -13,6 +13,19 @@ export default StyleSheet.create({
         paddingBottom:10,
         flexDirection:'row'    //Step 1
     },
+    toolbarCenterContainer:{
+        position: 'absolute',
+  flex:0.1,
+  left: 0,
+  right: 0,
+  height:70,
+  bottom: -10,
+        backgroundColor:'#003300',
+        paddingTop:10,
+        paddingBottom:10,
+        flexDirection:'row',
+          //Step 1
+    },
     mainviewStyle: {
   flex: 1,
   flexDirection: 'column',
