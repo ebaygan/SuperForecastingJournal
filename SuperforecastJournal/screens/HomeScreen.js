@@ -38,7 +38,10 @@ onCreateNew = () => {
 
         <ContainerView/>
 
+
+
         <View style={styles.toolbar}>
+        <Text style={styles.toolbarLeft}></Text>
         <Button
         style={styles.toolbarButton}
             title="Create Topic"
@@ -50,7 +53,7 @@ onCreateNew = () => {
             accessibilityLabel="Create new topic"
         />
 
-        <Text style={styles.toolbarTitle}></Text>
+        <Text style={styles.toolbarCenter}></Text>
         
         <Button
             title="Delete Topic"
@@ -61,6 +64,7 @@ onCreateNew = () => {
         }
             
         />
+        <Text style={styles.toolbarLeft}></Text>
         </View>
         
       </View>
@@ -93,6 +97,7 @@ const styles = StyleSheet.create({
   flex:0.1,
   left: 0,
   right: 0,
+  height:70,
   bottom: -10,
         backgroundColor:'#003300',
         paddingTop:10,
@@ -107,11 +112,23 @@ const styles = StyleSheet.create({
         width: 50,            //Step 2
         backgroundColor:'#003300',
         textAlign:'center',
-        margin: 10
+        marginHorizontal: 10
     },
-    toolbarTitle:{
+    toolbarCenter:{
         color:'#fff',
         textAlign:'center',
+        fontWeight:'bold',
+        flex:1                //Step 3
+    },
+    toolbarLeft:{
+        color:'#fff',
+        textAlign:'left',
+        fontWeight:'bold',
+        flex:1                //Step 3
+    },
+    toolbarRight:{
+        color:'#fff',
+        textAlign:'right',
         fontWeight:'bold',
         flex:1                //Step 3
     },
