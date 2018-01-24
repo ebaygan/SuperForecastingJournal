@@ -22,10 +22,7 @@ render() {
         style={styles.toolbarCenter}
             title="Create Topic"
              color="#FFFFFF"
-            onPress={() =>
-          navigate('CreateTopicScreen', { name: 'Jane' })
-        }
-            
+            onPress={this.createTopic}    
             accessibilityLabel="Create new topic"
         />
         <Text style={styles.toolbarRight} />
@@ -34,6 +31,10 @@ render() {
       </View>;
 }
 
+createTopic() {
+
+
+}
 
 
 }
@@ -43,11 +44,15 @@ render() {
 class ContainerView extends React.Component {
 constructor(props) {
       super(props);
+      this.state = { text: 'Useless Placeholder' };
 }
 
 render() {
     return(
-       <TextInput value="Enter Name of Topic" />
+       <TextInput 
+       onChangeText={(text) => this.setState({text})}
+        value={this.state.text}
+       />
     );
   }
 }
