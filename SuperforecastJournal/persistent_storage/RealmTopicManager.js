@@ -48,6 +48,19 @@ constructor(props) {
       });
     }
 
+    getTopics() {
+        return topicManager.objects('Topic');
+    }
+
+    getTopicNames() {
+        var topics = this.getTopics();
+        var result = [];
+        topics.forEach(function(t) {
+            result.push(t.name);
+        });
+        return result;
+    }
+
 }
 
 // Queries are updated in real-time
