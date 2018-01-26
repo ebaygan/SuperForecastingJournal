@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {TextInput, ListView, Text} from 'react-native';
+import {View, TextInput, ListView, Text} from 'react-native';
 import styles from '../Styles/Styles.js'
 
 var RealmTopicManager = require('../persistent_storage/RealmTopicManager.js');
@@ -23,7 +23,14 @@ render() {
     return(
        <ListView
         dataSource={this.state.dataSource}
-        renderRow={(rowData) => <Text style={styles.listRowFontCenter}>{rowData}</Text>}
+        renderRow={(rowData) => 
+
+        	<View>
+
+        	<Text style={styles.listRowFontLeft}>{rowData}</Text>
+
+        	</View>
+        }
       />
     );
   }

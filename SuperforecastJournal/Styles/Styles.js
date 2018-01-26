@@ -64,8 +64,16 @@ export default StyleSheet.create({
   	borderBottomColor: 'black',
     borderBottomWidth: 1,
   },
-  // viewBottomBorder: {
-  // 	borderBottomColor: 'black',
-  //   borderBottomWidth: 1,
-  // },
+  listRowFontLeft: {
+  	textAlign: 'left',
+  	fontSize: 18,
+  	margin: 5,
+  	borderBottomColor: 'black',
+    borderBottomWidth: 1,
+  },
+  separator: {
+    flex: 1,
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#8E8E8E',
+},
 });
