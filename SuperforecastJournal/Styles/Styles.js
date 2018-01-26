@@ -71,9 +71,20 @@ export default StyleSheet.create({
   	borderBottomColor: 'black',
     borderBottomWidth: 1,
   },
+  listImageRight: {
+    justifyContent: 'flex-end',
+    alignSelf: 'flex-end', 
+    height: 40,
+    width: 30,
+  },
   separator: {
     flex: 1,
     height: StyleSheet.hairlineWidth,
     backgroundColor: '#8E8E8E',
 },
+listContainer: {
+    flex: 1,
+    marginTop: 40,
+    marginHorizontal: 10,
+  },
 });
