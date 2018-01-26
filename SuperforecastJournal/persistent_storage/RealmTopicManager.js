@@ -25,13 +25,20 @@ topicManager.write(() => {
     // });
 });
 
-export class RealmTopicManager {
+export class TopicManager {
 
-    createTopic() {
+constructor(props) {
+    
+  }
+
+    createTopic(insertName) {
+         const uuid = this.uuidv4();
+         topicManager.write(() => { 
          savedTopic = topicManager.create('Topic', {
-             key: uuidv4(),
-             name: 'Hal Incandenza',
+             key: uuid,
+             name: insertName,
          });
+     });
     }
 
     uuidv4() {

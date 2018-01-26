@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import {TextInput, View, Text, Button} from 'react-native';
 import styles from '../Styles/Styles.js'
 
+export var NameString = 'Please insert topic name';
+var RealmTopicManager = require('../persistent_storage/RealmTopicManager.js');
+var TopicManager = new RealmTopicManager.TopicManager();
 
 export class CreateTopicScreen extends Component<{}> {
 
@@ -10,10 +13,6 @@ export class CreateTopicScreen extends Component<{}> {
 
 render() {
       return <View style={styles.mainviewStyle}>
-
-     
-
-
         <ContainerView/>
       <View style={styles.toolbar}>
       <Text style={styles.toolbarLeft} />
@@ -32,7 +31,7 @@ render() {
 }
 
 createTopic() {
-
+	TopicManager.createTopic(NameString);
 
 }
 
@@ -44,7 +43,12 @@ createTopic() {
 class ContainerView extends React.Component {
 constructor(props) {
       super(props);
-      this.state = { text: 'Useless Placeholder' };
+      this.state = {text: NameString} ;
+}
+
+setState(name) {
+	super.setState(name);
+	NameString = name;
 }
 
 render() {
