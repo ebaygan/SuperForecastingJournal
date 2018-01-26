@@ -89,7 +89,7 @@ render() {
     return(
        <ListView
         dataSource={this.state.dataSource}
-        renderRow={(rowData) => <Text>{rowData}</Text>}
+        renderRow={(rowData) => <Text style={styles.listRowFontCenter}>{rowData}</Text>}
       />
     );
   }
