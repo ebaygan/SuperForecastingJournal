@@ -48,7 +48,8 @@ constructor(props) {
 
 setState(name) {
 	super.setState(name);
-	NameString = name;
+  this.state = name;
+	NameString = this.state.text;
 }
 
 render() {
