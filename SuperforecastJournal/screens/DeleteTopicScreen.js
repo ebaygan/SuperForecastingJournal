@@ -27,9 +27,9 @@ render() {
 
         	<View style={styles.listContainer}>
 
-        	<Text style={styles.listRowFontLeft}>{rowData} <Image style={styles.listImageRight} source={require('../images/DeleteTopicScreen/Trashcan_furniture_icon.png')} /></Text>
+        	<Text style={styles.listRowFontLeft}>{rowData} </Text>
 
-          
+          <Image style={styles.listImageRight} source={require('../images/DeleteTopicScreen/Trashcan_furniture_icon.png')} />
 
         	</View>
         }

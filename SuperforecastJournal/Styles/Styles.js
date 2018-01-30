@@ -65,17 +65,22 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
   },
   listRowFontLeft: {
-  	textAlign: 'left',
+  	textAlign: 'center',
+    alignSelf: 'flex-start',
   	fontSize: 18,
   	margin: 5,
   	borderBottomColor: 'black',
     borderBottomWidth: 1,
+    justifyContent: 'center',
   },
   listImageRight: {
     justifyContent: 'flex-end',
     alignSelf: 'flex-end', 
-    height: 40,
-    width: 30,
+    height: 30,
+    width: 24,
+    position: 'absolute',
+    right: 0,
+    margin: 10,
   },
   separator: {
     flex: 1,
@@ -84,7 +89,7 @@ export default StyleSheet.create({
 },
 listContainer: {
     flex: 1,
-    marginTop: 40,
     marginHorizontal: 10,
+    alignItems: 'flex-end'
   },
 });
