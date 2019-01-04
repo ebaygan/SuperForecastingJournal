@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, TextInput, ListView, Text} from 'react-native';
+import {View, TextInput, ListView, Text, Image} from 'react-native';
 import styles from '../Styles/Styles.js'
 
 var RealmTopicManager = require('../persistent_storage/RealmTopicManager.js');
@@ -25,9 +25,11 @@ render() {
         dataSource={this.state.dataSource}
         renderRow={(rowData) => 
 
-        	<View>
+        	<View style={styles.listContainer}>
 
-        	<Text style={styles.listRowFontLeft}>{rowData}</Text>
+        	<Text style={styles.listRowFontLeft}>{rowData} </Text>
+
+          <Image style={styles.listImageRight} source={require('../images/DeleteTopicScreen/Trashcan_furniture_icon.png')} />
 
         	</View>
         }
