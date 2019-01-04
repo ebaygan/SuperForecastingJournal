@@ -12,6 +12,7 @@ export class CreateTopicScreen extends Component<{}> {
 
 
 render() {
+  const { goBack } = this.props.navigation;
       return <View style={styles.mainviewStyle}>
         <ContainerView/>
       <View style={styles.toolbar}>
@@ -21,7 +22,10 @@ render() {
         style={styles.toolbarCenter}
             title="Create Topic"
              color="#FFFFFF"
-            onPress={this.createTopic}    
+            onPress={() => {
+      this.createTopic();
+      goBack();
+  }}    
             accessibilityLabel="Create new topic"
         />
         <Text style={styles.toolbarRight} />
@@ -32,7 +36,6 @@ render() {
 
 createTopic() {
 	TopicManager.createTopic(NameString);
-
 }
 
 
